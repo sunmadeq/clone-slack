@@ -5,7 +5,7 @@ import { ConvexReactClient } from "convex/react";
 import { ConvexAuthNextjsProvider } from "@convex-dev/auth/nextjs";
 import { Provider } from "jotai";
 
-export default ({ children }: PropsWithChildren) => {
+const ClientProvider = ({ children }: PropsWithChildren) => {
   const [convex] = useState(() => new ConvexReactClient(process.env.NEXT_PUBLIC_CONVEX_URL!))
 
   return (
@@ -14,3 +14,5 @@ export default ({ children }: PropsWithChildren) => {
     </ConvexAuthNextjsProvider>
   );
 }
+
+export default ClientProvider;
